@@ -11,7 +11,8 @@ $(document).ready(function () {
             },
             postalCode: {
                 required: true,
-                range: []
+                minlength: 5,
+                maxlength: 7,
             },
             email_1: {
                 required: true,
