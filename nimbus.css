@@ -38,3 +38,8 @@
  body{
      background-color: black;
  }
+ #map{
+     height: 50%;
+     width: auto;
+     visibility: visible;
+ }

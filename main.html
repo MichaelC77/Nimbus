@@ -17,6 +17,17 @@
 </div>
 <main>
     <p>Hello world</p>
+    <div id="map"></div>
+    <script>
+    var map;
+    function initMap(){
+    var rockyHarbour = {lat:49.599, lng:-57.923};
+    map = new google.maps.Map(document.getElementById("map"),
+    {zoom: 8, center: rockyHarbour});
+    var marker = new google.maps.Marker({position: rockyHarbour, map:map});
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVjslofgkXPjf6T2f36RIF1AChnTOxoz4&callback=initMap"></script>
 </main>
 <footer>
 
