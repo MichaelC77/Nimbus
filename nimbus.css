@@ -1,4 +1,40 @@
-
  .navBarLinks{
      float:right;
+     padding: 1%;
+     height: 10%;
+     width: auto;
+ }
+ #headerbar{
+     background-color: blue;
+     height: 15%;
+     width: auto;
+ }
+ #navbar{
+     background-color: aquamarine;
+     height: 50%;
+     width: auto;
+ }
+ li{
+     display: inline;
+ }
+ body{
+     height: 1000px;
+ }
+ #logoImage{
+     height: 50%;
+     width: auto;
+ }
+ main{
+     width: 75%;
+     height: 75%;
+     margin: 0 auto;
+     background-color: antiquewhite;
+ }
+ footer{
+     height: 10%;
+     background-color: blue;
+     width: auto;
+ }
+ body{
+     background-color: black;
  }
