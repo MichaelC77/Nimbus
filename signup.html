@@ -17,7 +17,7 @@
 </div>
 <main>
     <p>Hello world</p>
-    <form>
+    <form id="signUpForm">
         First Name:<br>
         <input type="text" name="firstname"><br>
         <span></span>
@@ -36,6 +36,9 @@
         <br>
         <input type="submit" name="submit"><br>
     </form>
+    <script>
+        $("#signUpForm").validate();
+    </script>
 </main>
 <footer>
 
@@ -43,5 +46,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"/>
+<script src="nimbus.js" type="text/javascript"/>
 </body>
 </html>
