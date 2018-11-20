@@ -4,10 +4,10 @@ $(document).ready(function () {
 
         rules: {
             firstName: {
-                required: true
+                required: true,
             },
             lastName: {
-                required: true
+                required: true,
             },
             postalCode: {
                 required: true,
@@ -15,17 +15,13 @@ $(document).ready(function () {
             },
             email_1: {
                 required: true,
-                email: true
+                email: true,
             },
             email_2: {
                 required: true,
-                equalTo: "#email_1"
+                equalTo: "#email_1",
             },
         },
-        messages: {
-            firstName: {
-            }
-        }
     }) // end validation
 
 
