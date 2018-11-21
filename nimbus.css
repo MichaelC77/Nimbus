@@ -83,3 +83,9 @@ tr{
     font-size: 38px;
     padding-top: 5%;
 }
+#slides img {
+    display: none;
+}
+#slide {
+    height: 250px;
+}
