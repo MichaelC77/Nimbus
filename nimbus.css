@@ -4,16 +4,28 @@
      width: auto;
  }
  #headerbar{
-     background-color: blue;
+     background-color: #ff0000;
      height: 10%;
      width: auto;
  }
+ @font-face {
+     font-family: 'future_socialism';
+     src: url(fonts/future_socialism.ttf);
+ }
+@font-face {
+    font-family: 'kremlin';
+    src: url(fonts/kremlin.ttf);
+}
  #navBarDiv{
      height: 4%;
      clear:left;
  }
+ .headerText{
+     float: right;
+     font-family: 'kremlin', serif;
+ }
  #navbar{
-     background-color: aquamarine;
+     background-color: #ffff00;
      height: 40px;
      width: auto;
      margin-top: 0;
@@ -32,6 +44,7 @@
  li > p > a{
      text-decoration: none;
      font-size: 18pt;
+     font-weight: bold;
  }
  li > p > a:active{
      color: blue;
@@ -51,9 +64,25 @@ main{
     background-color: antiquewhite;
 }
 footer{
-    height: 10%;
-    background-color: blue;
+    height: auto;
+    background-color: gray;
     width: auto;
+}
+.footerText{
+    text-align: center;
+    color: white;
+}
+audio{
+    display: none;
+}
+label{
+    display: inline-block;
+    text-align: right;
+}
+.footerTextTitle{
+    text-align: center;
+    color: white;
+    font-family: 'future_socialism', serif;
 }
 body{
     background-color: black;

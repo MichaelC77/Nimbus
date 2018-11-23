@@ -13,7 +13,8 @@
 </head>
 <body>
 <div id="headerbar">
-    <a href="main.html"><img id="logoImage" src="logo.png" alt="logo"/></a>
+    <a href="main.html"><img id="logoImage" src="icon.png" alt="logo"/></a>
+    <h1 class="headerText">NIMBUS STUDIOS</h1>
 </div>
 <div id="navBarDiv">
     <ul id="navbar">
@@ -24,27 +25,49 @@
     </ul>
 </div>
 <main>
-    <p>Hello world</p>
+    <h1> Hello Comrade!</h1>
+    <p>To receive updates about the glorious games we will be working on in the future please fill out the below</p>
+    <h1>Добро пожаловать, товарищ!</h1>
+    <p>Чтобы получать обновления о славных играх, над которыми мы будем работать в будущем, пожалуйста, заполните ниже</p>
     <form id="signUpForm" name="signUpForm" action="loginSplash.html" method="get">
-        <label for="email_1">Email:</label>
-        <input type="text" id="email_1" name="email_1"><br>
-
-        <label for="email_2">Confirm Email:</label>
-        <input type="text" id="email_2" name="email_2"><br>
-
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName"><br>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName"><br>
-
-        <label for="postalCode">Postal Code:</label>
-        <input type="text" id="postalCode" name="postalCode"><br>
-
-        <input type="submit" name="submit">
-        <input type="reset" name="reset"><br>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="email_1">Email (Эл. адрес):</label></td>
+                    <td><input type="text" id="email_1" name="email_1"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="email_2">Confirm Email (Подтвердите адрес электронной почты):</label></td>
+                    <td><input type="text" id="email_2" name="email_2"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="firstName">First Name (Имя):</label></td>
+                    <td><input type="text" id="firstName" name="firstName"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="lastName">Last Name (Фамилия):</label></td>
+                    <td><input type="text" id="lastName" name="lastName"><br></td>
+                </tr>
+                <tr>
+                    <td><label for="postalCode">Postal Code (почтовый индекс):</label></td>
+                    <td><input type="text" id="postalCode" name="postalCode"><br></td>
+                </tr>
+                <tr>
+                    <!--TODO: Add Russian to the buttons-->
+                    <td></td>
+                    <td><input type="submit" name="submit">
+                    <input type="reset" name="reset"><br></td>
+                </tr>
+            </tbody>
+        </table>
     </form>
 
 </main>
+<footer>
+    <h1 class="footerTextTitle">N i m b u s      S t u d i o s</h1>
+    <p class="footerText">Ivankivs'kyi district </p>
+    <p class="footerText">Kyiv Oblast</p>
+    <p class="footerText">Ukraine</p>
+</footer>
 </body>
 </html>
