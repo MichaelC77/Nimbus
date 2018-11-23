@@ -46,7 +46,7 @@ $(document).ready(function () {
             if (comparisonVarOne === comparisonVarTwo){
                 cleanUp(1)
             } else {
-                setTimeout(function(){cleanUp(0)}, 2000);
+                setTimeout(function(){cleanUp(0)}, 500);
             }
         }
     }
@@ -89,15 +89,8 @@ $(document).ready(function () {
     });
 
 
-    /** TODO: Card comparison that checks between two cards
-     * use two temp vars set to ""
-     * when img is clicked, check if comparisonVarOne is empty
-     * if true, assign img src to comparisonVarOne
-     * if false, assign img src to comparisonVarTwo
-     * once comparisonVarTwo is assigned run comparison function
-     * if they match then remove images from page
-     * if images don't match, run cleanUp() function
-     * clear comparisonVarOne & comparisonVarTwo, set imgs to cardback.png
+    /** TODO: Fade in fade out on cards
+     * Add timer and score
      */
 });
 
