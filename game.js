@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
 
     /**
-     * Global image arrays
+     * Global variables
      * imageArrayOne is a lower bound image array for the first 10 cards
      * imageArrayTwo is a higher bound image array for the last 10 cards
      */
@@ -25,33 +25,79 @@ $(document).ready(function () {
         'car.png', 'boat.png', 'snake.jpg', 'rocket.jpg', 'dreamySnakes.jpg',
         'chicken.jpg'];
     var imageArrayTwo = imageArrayOne.slice();
+    var comparisonVarOne = "";
+    var cardPositionOne;
+    var comparisonVarTwo = "";
+    var cardPositionTwo;
+    var counter = 10;
+
     shuffle(imageArrayOne);
     shuffle(imageArrayTwo);
+
+
+    function comparison(clickInstance){
+        if (comparisonVarOne === ""){
+            cardPositionOne = clickInstance;
+            comparisonVarOne = cardPositionOne.attr('src');
+        }
+        else {
+            cardPositionTwo = clickInstance;
+            comparisonVarTwo = cardPositionTwo.attr('src');
+            if (comparisonVarOne === comparisonVarTwo){
+                cleanUp(1)
+            } else {
+                setTimeout(function(){cleanUp(0)}, 2000);
+            }
+        }
+    }
+
+    function cleanUp(number){
+        if (number === 0) {
+            cardPositionOne.attr('src', 'cardBack.png');
+            cardPositionTwo.attr('src', 'cardBack.png');
+        }
+        if (number === 1) {
+            cardPositionOne.attr('src', '');
+            cardPositionTwo.attr('src', '');
+        }
+        comparisonVarOne = "";
+        comparisonVarTwo = "";
+        counter -= number;
+        if (counter === 0){
+            alert("You saved homeland!");
+        }
+    }
 
     /**
      * Clickevent handler
      */
     // noinspection JSDeprecatedSymbols
     $("table img").click(function () {
-        if ((parseInt($(this).attr('alt'))) > 9){
-            $(this).attr('src',
+        var clickInstance = $(this);
+        if ((parseInt(clickInstance.attr('alt'))) > 9){
+            clickInstance.attr('src',
                 imageArrayTwo[(
-                    parseInt($(this).attr(
+                    parseInt(clickInstance.attr(
                         'alt')) -10)]);
+            comparison(clickInstance);
         } else {
-            $(this).attr('src', imageArrayOne[parseInt(
-                $(this).attr('alt')
+            clickInstance.attr('src', imageArrayOne[parseInt(
+                clickInstance.attr('alt')
             )]);
+            comparison(clickInstance);
         }
     });
 
-    /** TODO: Use an array of img src
-     * index 0 is card 1 etc..
-     * TODO: create img image on click function
-     * fadeOut/explode
-     * hide img
-     * change img src via variable array
-     * fade in img
+
+    /** TODO: Card comparison that checks between two cards
+     * use two temp vars set to ""
+     * when img is clicked, check if comparisonVarOne is empty
+     * if true, assign img src to comparisonVarOne
+     * if false, assign img src to comparisonVarTwo
+     * once comparisonVarTwo is assigned run comparison function
+     * if they match then remove images from page
+     * if images don't match, run cleanUp() function
+     * clear comparisonVarOne & comparisonVarTwo, set imgs to cardback.png
      */
 });
 
