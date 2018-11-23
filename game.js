@@ -34,7 +34,6 @@ $(document).ready(function () {
     shuffle(imageArrayOne);
     shuffle(imageArrayTwo);
 
-
     function comparison(clickInstance){
         if (comparisonVarOne === ""){
             cardPositionOne = clickInstance;
@@ -43,10 +42,12 @@ $(document).ready(function () {
         else {
             cardPositionTwo = clickInstance;
             comparisonVarTwo = cardPositionTwo.attr('src');
-            if (comparisonVarOne === comparisonVarTwo){
+            if (comparisonVarOne === comparisonVarTwo &&
+                cardPositionOne.attr('alt') !== cardPositionTwo.attr('alt') &&
+                comparisonVarOne !== 'transparent.png'){
                 cleanUp(1)
             } else {
-                setTimeout(function(){cleanUp(0)}, 500);
+                setTimeout(function(){cleanUp(0)}, 700);
             }
         }
     }
@@ -57,8 +58,14 @@ $(document).ready(function () {
             cardPositionTwo.attr('src', 'cardBack.png');
         }
         if (number === 1) {
-            cardPositionOne.attr('src', '');
-            cardPositionTwo.attr('src', '');
+            var one = cardPositionOne;
+            var two = cardPositionTwo;
+            cardPositionOne.toggle('fold');
+            setTimeout(function(){one.attr('src', 'transparent.png');
+                one.show()}, 2000);
+            cardPositionTwo.fadeOut();
+            setTimeout(function(){two.attr('src', 'transparent.png');
+                two.show()}, 2000);
         }
         comparisonVarOne = "";
         comparisonVarTwo = "";
@@ -66,7 +73,7 @@ $(document).ready(function () {
         if (counter === 0){
             alert("You saved homeland!");
         }
-    }
+    } // end clean up function
 
     /**
      * Clickevent handler
@@ -74,31 +81,18 @@ $(document).ready(function () {
     // noinspection JSDeprecatedSymbols
     $("table img").click(function () {
         var clickInstance = $(this);
-        if ((parseInt(clickInstance.attr('alt'))) > 9){
-            clickInstance.attr('src',
-                imageArrayTwo[(
-                    parseInt(clickInstance.attr(
-                        'alt')) -10)]);
-            comparison(clickInstance);
-        } else {
-            clickInstance.attr('src', imageArrayOne[parseInt(
-                clickInstance.attr('alt')
-            )]);
-            comparison(clickInstance);
-        }
-    });
-
-
-    /** TODO: Fade in fade out on cards
-     * Add timer and score
-     */
-});
-
-// ===========================DEBUG CODE=============================
-/*
-    $("table img").attr("id", function (index) {
-        var id = "heading" + (index + 1);
-        $(this).attr('src', imageArrayOne[index]);
-        imageArrayOne.push($(this).attr("src"));
-    });
-    */
+        if (clickInstance.attr('src') !== 'transparent.png'){
+            if ((parseInt(clickInstance.attr('alt'))) > 9){
+                clickInstance.attr('src',
+                    imageArrayTwo[(
+                        parseInt(clickInstance.attr(
+                            'alt')) -10)]);
+                comparison(clickInstance);
+            } else {
+                clickInstance.attr('src', imageArrayOne[parseInt(
+                    clickInstance.attr('alt')
+                )]);
+                comparison(clickInstance);
+            }
+    }}); // end click handler
+}); // end ready
