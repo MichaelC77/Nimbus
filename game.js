@@ -21,9 +21,9 @@ $(document).ready(function () {
      * imageArrayOne is a lower bound image array for the first 10 cards
      * imageArrayTwo is a higher bound image array for the last 10 cards
      */
-    var imageArrayOne = ['train.png', 'plane.png', 'flower.png', 'cow.png',
-        'car.png', 'boat.png', 'snake.jpg', 'rocket.jpg', 'dreamySnakes.jpg',
-        'chicken.jpg'];
+    var imageArrayOne = ['images/train.png', 'images/plane.png', 'images/flower.png', 'images/cow.png',
+        'images/car.png', 'images/boat.png', 'images/snake.jpg', 'images/rocket.jpg', 'images/dreamySnakes.jpg',
+        'images/chicken.jpg'];
     var imageArrayTwo = imageArrayOne.slice();
     var comparisonVarOne = "";
     var cardPositionOne;
@@ -44,7 +44,7 @@ $(document).ready(function () {
             comparisonVarTwo = cardPositionTwo.attr('src');
             if (comparisonVarOne === comparisonVarTwo &&
                 cardPositionOne.attr('alt') !== cardPositionTwo.attr('alt') &&
-                comparisonVarOne !== 'transparent.png'){
+                comparisonVarOne !== 'images/transparent.png'){
                 cleanUp(1)
             } else {
                 setTimeout(function(){cleanUp(0)}, 700);
@@ -54,17 +54,17 @@ $(document).ready(function () {
 
     function cleanUp(number){
         if (number === 0) {
-            cardPositionOne.attr('src', 'cardBack.png');
-            cardPositionTwo.attr('src', 'cardBack.png');
+            cardPositionOne.attr('src', 'images/cardBack.png');
+            cardPositionTwo.attr('src', 'images/cardBack.png');
         }
         if (number === 1) {
             var one = cardPositionOne;
             var two = cardPositionTwo;
             cardPositionOne.toggle('fold');
-            setTimeout(function(){one.attr('src', 'transparent.png');
+            setTimeout(function(){one.attr('src', 'images/transparent.png');
                 one.show()}, 2000);
             cardPositionTwo.fadeOut();
-            setTimeout(function(){two.attr('src', 'transparent.png');
+            setTimeout(function(){two.attr('src', 'images/transparent.png');
                 two.show()}, 2000);
         }
         comparisonVarOne = "";
@@ -81,7 +81,7 @@ $(document).ready(function () {
     // noinspection JSDeprecatedSymbols
     $("table img").click(function () {
         var clickInstance = $(this);
-        if (clickInstance.attr('src') !== 'transparent.png'){
+        if (clickInstance.attr('src') !== 'images/transparent.png'){
             if ((parseInt(clickInstance.attr('alt'))) > 9){
                 clickInstance.attr('src',
                     imageArrayTwo[(
